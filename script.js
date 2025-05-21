@@ -36,21 +36,42 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const html = `
-      <h2 class="recommendation-title">Supports recommandés :</h2>
-      <ul class="support-list">
-        ${recommandations[usage].map(rec => `
-          <li>
+    const itemsHtml = recommandations[usage].map(rec => {
+      let thumbnailUrl = 'https://via.placeholder.com/100x100.png?text=Image+Indisponible'; // Fallback image
+      try {
+        const productUrl = new URL(rec.url);
+        const productId = productUrl.searchParams.get("id");
+        if (productId) {
+          thumbnailUrl = `https://signatix.fr/img/supports/${productId}/mini.jpg`;
+        }
+      } catch (error) {
+        console.error("Erreur lors de la construction de l'URL de la vignette pour:", rec.nom, error);
+      }
+
+      return `
+        <li class="support-item">
+          <div class="support-details">
             <span class="support-title">${rec.nom}</span><br>
             <span class="support-price">À partir de : ${rec.prix}</span><br>
             <span class="support-delay">Délai de production estimé : ${rec.delai}</span><br>
             <a href="${rec.url}" class="support-link" target="_blank" rel="noopener noreferrer">
               Voir la fiche produit
             </a>
-          </li>
-        `).join('')}
+          </div>
+          <div class="support-thumbnail">
+            <img src="${thumbnailUrl}" alt="Vignette pour ${rec.nom}">
+          </div>
+        </li>
+      `;
+    }).join('');
+
+    const html = `
+      <h2 class="recommendation-title">Supports recommandés :</h2>
+      <ul class="support-list">
+        ${itemsHtml}
       </ul>
     `;
     resultatDiv.innerHTML = html;
   });
 });
+
