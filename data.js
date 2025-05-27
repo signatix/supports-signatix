@@ -9,7 +9,6 @@ const recommandations = {
     { nom: "Micro ventouse M1 Mat", prix: "8.99 € HT/m²", delai: "4 jours", url: "https://signatix.fr/supports/affiches-films?id=59" },
     { nom: "Micro ventouse Transparent", prix: "8.99 € HT/m²", delai: "4 jours", url: "https://signatix.fr/supports/affiches-films?id=61" },
     { nom: "Microperfore+plastif ultra clear", prix: "29.5 € HT/m²", delai: "4 jours", url: "https://signatix.fr/supports/adhesifs?id=73" },
-    { nom: "Dépoli polymère Air Free", prix: "14.99 € HT/m²", delai: "3 jours", url: "https://signatix.fr/supports/adhesifs?id=85" },
     { nom: "Microperforé pose intérieur", prix: "24.8 € HT/m²", delai: "5 jours", url: "https://signatix.fr/supports/adhesifs?id=87" },
     { nom: "Vinyle ultra transparent", prix: "9.99 € HT/m²", delai: "5 jours", url: "https://signatix.fr/supports/adhesifs?id=88" },
     { nom: "Dépoli polymère Air Free", prix: "14.99 € HT/m²", delai: "3 jours", url: "https://signatix.fr/supports/decoration?id=126" }
