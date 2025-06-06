@@ -70,8 +70,8 @@ select, button {
 
 select:focus, button:focus {
   outline: none;
-  border-color: #00adee;
-  box-shadow: 0 0 0 2px #00adee44;
+  border-color: #c4006b;
+  box-shadow: 0 0 0 2px #c4006b44;
 }
 
 button {
@@ -86,7 +86,7 @@ button {
 }
 
 button:hover {
-  background: #00adee;
+  background: #c4006b;
 }
 
 #resultat {
