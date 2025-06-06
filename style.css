@@ -89,6 +89,23 @@ button:hover {
   background: #c4006b;
 }
 
+/* Styles pour le bouton "Réinitialiser" (secondaire) */
+.reset-button {
+  background: transparent; /* Fond transparent */
+  color: #e6007e; /* Couleur du texte Signatix pink */
+  font-weight: normal; /* Police normale, moins d'emphase */
+  border: 1px solid #e6007e; /* Bordure assortie au select et à la couleur principale */
+  box-shadow: none; /* Pas d'ombre pour un look plus plat */
+  /* Les autres propriétés comme padding, border-radius, font-size, width, cursor, transition, margin-top sont héritées du style 'button' général */
+}
+
+.reset-button:hover {
+  background: #e6007e1a; /* Fond rose très léger au survol (rose avec ~10% opacité) */
+  color: #e6007e; /* La couleur du texte reste rose */
+  /* La bordure reste #e6007e */
+}
+
+
 #resultat {
   width: 100%;
 }
@@ -171,4 +188,3 @@ button:hover {
     font-size: 1.3rem;
   }
 }
-

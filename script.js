@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const usageSelect = document.getElementById("usageSelect");
   const precoForm = document.getElementById("precoForm");
   const resultatDiv = document.getElementById("resultat");
+  const resetButton = precoForm.querySelector('button.reset-button'); // Sélection du bouton Réinitialiser
 
   // Génération dynamique des usages dans le select
   const usages = Object.keys(recommandations);
@@ -53,5 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     resultatDiv.innerHTML = html;
   });
-});
 
+  // Gère le clic sur le bouton "Réinitialiser"
+  if (resetButton) {
+    resetButton.addEventListener('click', function() {
+      // Le formulaire est réinitialisé nativement grâce à type="reset"
+      // (le select revient à sa première option).
+      // Nous devons juste vider la div des résultats.
+      resultatDiv.innerHTML = "";
+    });
+  }
+});

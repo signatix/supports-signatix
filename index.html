@@ -20,11 +20,13 @@
       <span class="subtitle-note">Pour une expérience optimale, connectez-vous à votre compte Signatix.fr</span>
     </p>
     <form id="precoForm">
-      <select id="usageSelect" required>
-        <option value="">Sélectionnez un usage</option>
+      <select id="usageSelect" name="usageSelect">
+        <option value="">-- Choisissez un usage --</option>
+        <!-- Options populated by JS -->
       </select>
-      <button type="submit">Afficher les préconisations</button>
-    </form>
+      <button type="submit">Obtenir les préconisations</button> 
+      <button type="reset" class="reset-button">Réinitialiser</button> <!-- Nouveau bouton -->
+      </form>
     <div id="resultat" aria-live="polite"></div>
   </div>
   <script src="data.js" defer></script>
