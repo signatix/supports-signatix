@@ -51,7 +51,7 @@ Tout est dans `data.js` : il suffit de modifier ce fichier pour ajouter, retir
 
 ## Auteur
 
-Développé par Frédéric DEBAILLEUL, chargé de développement.
+Développé par Frédéric DEBAILLEUL
 
 ---
 
