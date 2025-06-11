@@ -1,190 +1,28 @@
+/* Configuration de la police Inter pour tout le document */
 body {
-  background: #f5f6fa;
-  min-height: 100vh;
-  margin: 0;
-  padding: 1rem;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.03);
-  padding: 1.5rem;
-  max-width: 32rem;
-  width: 100%;
-  border: 4px solid #e6007e;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Animation d'apparition douce pour les résultats */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.logo {
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  object-fit: contain;
+/* Style pour afficher une flèche sur le menu déroulant */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  color: #e6007e;
-}
-
-.subtitle {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #232323;
-}
-
-.subtitle-note {
-  font-size: 0.95em;
-  color: #888;
-}
-
-form {
-  margin-bottom: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-select, button {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #e6007e;
-  box-sizing: border-box;
-}
-
-select:focus, button:focus {
-  outline: none;
-  border-color: #c4006b;
-  box-shadow: 0 0 0 2px #c4006b44;
-}
-
-button {
-  background: #e6007e;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-button:hover {
-  background: #c4006b;
-}
-
-/* Styles pour le bouton "Réinitialiser" (secondaire) */
-.reset-button {
-  background: transparent; /* Fond transparent */
-  color: #e6007e; /* Couleur du texte Signatix pink */
-  font-weight: normal; /* Police normale, moins d'emphase */
-  border: 1px solid #e6007e; /* Bordure assortie au select et à la couleur principale */
-  box-shadow: none; /* Pas d'ombre pour un look plus plat */
-  /* Les autres propriétés comme padding, border-radius, font-size, width, cursor, transition, margin-top sont héritées du style 'button' général */
-}
-
-.reset-button:hover {
-  background: #e6007e1a; /* Fond rose très léger au survol (rose avec ~10% opacité) */
-  color: #e6007e; /* La couleur du texte reste rose */
-  /* La bordure reste #e6007e */
-}
-
-
-#resultat {
-  width: 100%;
-}
-
-.support-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.support-list li {
-  margin-bottom: 1rem;
-  padding: 0.8em;
-  border: 1px solid #ddd; /* Lighter border for each item */
-  border-radius: 4px;
-  background-color: #fdfdfd; /* Slight background to distinguish items */
-}
-
-
-.support-title {
-  font-weight: bold;
-  color: #e6007e;
-}
-
-.support-price {
-  color: #232323;
-  font-size: 0.9em;
-}
-
-.support-delay {
-  color: #777;
-  font-size: 0.9em;
-}
-
-.support-link {
-  display: inline-block;
-  margin-top: 0.5em;
-  padding: 0.5em 1em;
-  background-color: #e6007e; /* Signatix pink */
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9em;
-  transition: background-color 0.2s;
-}
-
-.support-link:hover {
-  background-color: #c4006b; /* Darker pink on hover */
-}
-
-/* Class for error messages, replacing text-red-500 */
-.error-message {
-  color: #e53935; /* A standard red for errors */
-  margin-top: 1em;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Class for the title of the recommendations section */
-.recommendation-title {
-  font-size: 1.2rem;
-  color: #e6007e; /* Signatix pink */
-  font-weight: bold;
-  margin-bottom: 0.8em;
-  text-align: left; /* Align to left for list context */
-}
-
-/* Responsive - pour petits écrans */
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-    padding: 0.8rem;
-    border-width: 2px;
-  }
-  .logo {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .title {
-    font-size: 1.3rem;
-  }
-}

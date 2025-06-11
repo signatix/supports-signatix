@@ -2,11 +2,14 @@
 
 Ce projet web propose un assistant permettant de recommander en quelques clics les supports d'impression les plus adaptés selon l'usage attendu, sur la base du catalogue Signatix. L'outil est simple, rapide et orienté métier : il vise à fiabiliser la recommandation produit pour les professionnels de la communication visuelle, signalétique, événementiel ou décoration.
 
+![image](https://github.com/user-attachments/assets/e152524b-fd20-42fb-9b3c-567e866dfa5f)
+
 ## Fonctionnalités
 
 - Sélection de l’usage final (vitrine, véhicule, signalétique, etc.)
-- Affichage immédiat des supports recommandés avec prix, délai, et lien direct vers la fiche produit Signatix
-- Interface responsive et moderne (mobile & desktop)
+- Bouton de réinitialisation pour effacer la sélection et les résultats.
+- Affichage immédiat des supports recommandés avec prix, délai, et lien direct vers la fiche produit Signatix.
+- Interface responsive et moderne (mobile & desktop), avec un affichage des résultats optimisé sur toute la largeur pour les grands écrans et un minimum de lignes.
 - Catalogue de recommandations maintenu dans un fichier structuré (`data.js`)
 - Zéro dépendance externe, déploiement ultra-simple
 
