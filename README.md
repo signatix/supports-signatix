@@ -1,62 +1,55 @@
 # Assistant de Préconisation Signatix
 
-Ce projet web propose un assistant permettant de recommander en quelques clics les supports d'impression les plus adaptés selon l'usage attendu, sur la base du catalogue Signatix. L'outil est simple, rapide et orienté métier : il vise à fiabiliser la recommandation produit pour les professionnels de la communication visuelle, signalétique, événementiel ou décoration.
-
-![image](https://github.com/user-attachments/assets/e152524b-fd20-42fb-9b3c-567e866dfa5f)
+Application web recommandant les supports d'impression adaptés à chaque usage, catalogue Signatix enrichi, affichage immédiat des fiches produits, prix, délais, vignettes visuelles associées à chaque support.
 
 ## Fonctionnalités
 
 - Sélection de l’usage final (vitrine, véhicule, signalétique, etc.)
-- Bouton de réinitialisation pour effacer la sélection et les résultats.
-- Affichage immédiat des supports recommandés avec prix, délai, et lien direct vers la fiche produit Signatix.
-- Interface responsive et moderne (mobile & desktop), avec un affichage des résultats optimisé sur toute la largeur pour les grands écrans et un minimum de lignes.
-- Catalogue de recommandations maintenu dans un fichier structuré (`data.js`)
-- Zéro dépendance externe, déploiement ultra-simple
+- Bouton de réinitialisation
+- Affichage des supports recommandés : prix, délai, lien direct fiche produit, vignette illustrative
+- Interface responsive (desktop/mobile)
+- Catalogue de recommandations dans `data.js`
+- Mapping automatique fiche produit/vignette dans `data.js` via objet `vignettesProduits`
+- Zéro dépendance externe, déploiement instantané
 
 ## Démo rapide
 
-1. Ouvrir `index.html` dans un navigateur.
-2. Choisir un usage dans la liste déroulante.
-3. Visualiser les supports proposés, comparer, accéder au site Signatix pour commander.
+1. Ouvrir `index.html` dans un navigateur
+2. Choisir un usage dans la liste déroulante
+3. Visualiser les supports proposés, comparer, accéder au site Signatix ou la fiche produit (avec vignette)
 
 ## Structure du projet
 
 ```
-├── index.html         # Interface principale utilisateur
-├── style.css          # Styles et responsive design
-├── script.js          # Logique dynamique (JavaScript Vanilla)
-├── data.js            # Recommandations usage/produits (catalogue Signatix)
+├── index.html         # Interface utilisateur
+├── style.css          # Styles
+├── script.js          # Logique dynamique (affichage, interaction, gestion vignettes)
+├── data.js            # Catalogue usages/produits + mapping vignettes
 ├── favicon.ico        # Icône du projet
 ```
 
-## Modifier le catalogue
+## Modifier le catalogue / Ajouter une vignette
 
-Tout est dans `data.js` : il suffit de modifier ce fichier pour ajouter, retirer ou mettre à jour les usages ou les supports recommandés, sans toucher au reste du code.
+- Les usages, recommandations et liens fiches produits : dans l’objet `recommandations` de `data.js`
+- Le mapping vignette produit/fiche produit : objet `vignettesProduits` (clé : url fiche, valeur : url vignette)
+- Les correspondances peuvent être exportées et intégrées automatiquement depuis un fichier Excel via script
+- Pour ajouter une vignette : ajouter ou modifier la clé correspondante dans `vignettesProduits`
 
 ## Technologies
 
-- HTML5, CSS3 (Flexbox, responsive)
-- JavaScript natif (aucune dépendance, aucune compilation)
+- HTML5, CSS3
+- JavaScript natif (aucune dépendance)
 
 ## Cas d’usage
 
 - Agences de communication
-- Chargés d’affaires en impression
-- Décorateurs, enseignes, TPE/PME
+- Chargés d’affaires impression
+- Décorateurs, enseignes, PME
 - Toute personne devant choisir rapidement un support adapté
-
-## Roadmap & perspectives
-
-- Filtres avancés (écologique, économique, délai…)
-- Connexion API Signatix pour catalogue en temps réel
-- Version multilingue
-- Connexion client SSO
 
 ## Auteur
 
-Développé par Frédéric DEBAILLEUL
+Frédéric DEBAILLEUL
 
 ---
-
-Ce projet vise à fiabiliser la recommandation de supports d’impression pour tous les pros du secteur. Pour toute suggestion ou contribution, ouvre une issue ou une pull request.  
-Vision simple : moins d’hésitation, plus d’efficacité.
+Optimisation de la fiabilité de la recommandation pour les pros du secteur. Suggestions, contributions via issue ou pull request.
